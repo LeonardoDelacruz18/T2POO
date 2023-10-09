@@ -7,7 +7,7 @@ package Ventanas;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import t2poo.Curso;
-import t2poo.reporteDeAsistencia;
+import t2poo.ReporteDeAsistencia;
 
 /**
  *
@@ -147,11 +147,11 @@ public class VentanaVerRegistros extends javax.swing.JFrame {
             return;
         }
         
-        reporteDeAsistencia repSelec =  cursoSelec
+        ReporteDeAsistencia repSelec =  cursoSelec
                 .getListaDeReportesDeAsistencia().get(index);    
         
         VentanaVerAsistencias ventanaVerAsistencias = 
-                new VentanaVerAsistencias(cursoSelec, this);
+                new VentanaVerAsistencias(cursoSelec, this, repSelec);
         ventanaVerAsistencias.setLocationRelativeTo(this);
         ventanaVerAsistencias.setVisible(true);
         this.setVisible(false);
@@ -218,7 +218,7 @@ public class VentanaVerRegistros extends javax.swing.JFrame {
         listaMostrando.removeAll();
         modeloNombres.removeAllElements();
         
-        for (reporteDeAsistencia rep : cursoSelec.getListaDeReportesDeAsistencia()) {
+        for (ReporteDeAsistencia rep : cursoSelec.getListaDeReportesDeAsistencia()) {
             String MostrarEst = rep.getTitulo();         
             String nombreString = MostrarEst;
             

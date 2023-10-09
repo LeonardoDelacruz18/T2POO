@@ -6,6 +6,7 @@ package Ventanas;
 
 import t2poo.Curso;
 import t2poo.Estudiante;
+import t2poo.ReporteDeAsistencia;
 
 /**
  *
@@ -24,10 +25,11 @@ public class VentanaVerAsistencias extends javax.swing.JFrame {
         initComponents();
     }
     
-    public VentanaVerAsistencias(Curso curso, VentanaVerRegistros padre) {
+    public VentanaVerAsistencias(Curso curso, VentanaVerRegistros padre,
+            ReporteDeAsistencia rep) {
         ventanaAnterior = padre;
         cursoSelec = curso;
-        estudiantes = curso.getEstudiantesEnElCurso();
+        estudiantes = rep.getRegistroEstudiantes2();
         initComponents();
         lbl_titulo.setText(curso.getTitulo());
         lbl_Estudiante1.setText(estudiantes[0].getNombre());

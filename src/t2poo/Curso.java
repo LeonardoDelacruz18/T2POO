@@ -14,7 +14,7 @@ public class Curso {
 
     private String titulo;
     private Estudiante[] estudiantesEnElCurso = new Estudiante[10];
-    private ArrayList<reporteDeAsistencia> listaDeReportesDeAsistencia
+    private ArrayList<ReporteDeAsistencia> listaDeReportesDeAsistencia
             = new ArrayList<>();
     
     
@@ -35,11 +35,11 @@ public class Curso {
         this.estudiantesEnElCurso = estudiantesEnElCurso;
     }    
 
-    public ArrayList<reporteDeAsistencia> getListaDeReportesDeAsistencia() {
+    public ArrayList<ReporteDeAsistencia> getListaDeReportesDeAsistencia() {
         return listaDeReportesDeAsistencia;
     }
 
-    public void agregarRegistroDeAsistencia(reporteDeAsistencia rAsistencias){
+    public void agregarRegistroDeAsistencia(ReporteDeAsistencia rAsistencias){
         this.listaDeReportesDeAsistencia.add(rAsistencias);
     }
     

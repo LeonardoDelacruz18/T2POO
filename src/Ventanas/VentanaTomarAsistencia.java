@@ -6,7 +6,7 @@ package Ventanas;
 
 import t2poo.Curso;
 import t2poo.Estudiante;
-import t2poo.reporteDeAsistencia;
+import t2poo.ReporteDeAsistencia;
 
 /**
  *
@@ -296,44 +296,52 @@ public class VentanaTomarAsistencia extends javax.swing.JFrame {
 
     private void lbl_iconAsistenciaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_iconAsistenciaMouseClicked
                 
-        reporteDeAsistencia nuevoReporte = new reporteDeAsistencia();        
+        ReporteDeAsistencia nuevoReporte = new ReporteDeAsistencia();
+
+        Estudiante[] est = new Estudiante[10];        
         
-        for (int i = 0; i < cursoSelec.getEstudiantesEnElCurso().length; i++) {
+        for (int i = 0; i < 10; i++) {
+            Estudiante estudiante = new Estudiante();
+
+            estudiante.setNombre(estudiantes[i].getNombre());   
             switch (i) {
                 case 0:
-                    estudiantes[i].setEstAsistencia(txt_estAsis1.getText());
+                    estudiante.setEstAsistencia(txt_estAsis1.getText());
                     break;
                 case 1:
-                    estudiantes[i].setEstAsistencia(txt_estAsis2.getText());
+                    estudiante.setEstAsistencia(txt_estAsis2.getText());
                     break;
                 case 2:
-                    estudiantes[i].setEstAsistencia(txt_estAsis3.getText());
+                    estudiante.setEstAsistencia(txt_estAsis3.getText());
                     break;
                 case 3:
-                    estudiantes[i].setEstAsistencia(txt_estAsis4.getText());
+                    estudiante.setEstAsistencia(txt_estAsis4.getText());
                     break;
                 case 4:
-                    estudiantes[i].setEstAsistencia(txt_estAsis5.getText());
+                    estudiante.setEstAsistencia(txt_estAsis5.getText());
                     break;
                 case 5:
-                    estudiantes[i].setEstAsistencia(txt_estAsis6.getText());
+                    estudiante.setEstAsistencia(txt_estAsis6.getText());
                     break;
                 case 6:
-                    estudiantes[i].setEstAsistencia(txt_estAsis7.getText());
+                    estudiante.setEstAsistencia(txt_estAsis7.getText());
                     break;
                 case 7:
-                    estudiantes[i].setEstAsistencia(txt_estAsis8.getText());
+                    estudiante.setEstAsistencia(txt_estAsis8.getText());
                     break;
                 case 8:
-                    estudiantes[i].setEstAsistencia(txt_estAsis9.getText());
+                    estudiante.setEstAsistencia(txt_estAsis9.getText());
                     break;
                 case 9:
-                    estudiantes[i].setEstAsistencia(txt_estAsis10.getText());
+                    estudiante.setEstAsistencia(txt_estAsis10.getText());
                     break;
                 default:                    
                     break;
             }
-            nuevoReporte.agregarEstudianteAlRegistro(estudiantes[i]);
+            est[i] = estudiante;        
+        }
+        for (int i = 0; i < 10; i++) {
+            nuevoReporte.agregarEstudianteAlRegistro2(est[i], i);
         }
         int num = cursoSelec.getListaDeReportesDeAsistencia().size() + 1;
         nuevoReporte.setTitulo("REGISTRO " + num);
